@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+	<meta charset="utf-8">
+	<title>Scope的绑定策略And</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+	<script type="text/javascript" src="scripts/ScopeAnd.js"></script>
+</head>
+<body>
+	<div ng-controller="myCtrl">
+		<greeting greet="sayHello(name)"></greeting>
+		<greeting greet="sayHello(name)"></greeting>
+		<greeting greet="sayHello(name)"></greeting>
+	</div>
+		
+</body>
+</html>

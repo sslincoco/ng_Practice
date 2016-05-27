@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+	<meta charset="utf-8">
+	<title>指令复用与控制器</title>
+	 
+	<script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+	<script type="text/javascript" src="scripts/Directive_Controller.js"></script>
+</head>
+<body>
+	<div ng-controller="myCtrl">
+		<loader howToLoad="loadData()">滑动加载</loader>
+	</div>
+	<div ng-controller="myCtrl2">
+		<loader howToLoad="loadData2()">滑动加载</loader>
+	</div>
+</body>
+</html>

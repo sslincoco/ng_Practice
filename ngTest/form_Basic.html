@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head> 
+	<meta charset="utf-8">
+	<title>Form_Basic</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+</head>
+<body>
+	<form name="myForm" ng-submit="save()" ng-controller="FormModuleCtrl">
+		<input type="text" name="username" ng-module="user.username" required /><br>
+		<input type="password" name="pwd" ng-module="user.pwd" required/>
+		<input type="submit" ng-disabled="myForm.$invalid">
+	</form>
+
+	<script type="text/javascript" src="scripts/Form_Basic.js"></script>
+</body>
+</html>
