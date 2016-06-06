@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="expanderModule">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>expanderModule</title>
+	<script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+	<script type="text/javascript" src="scripts/Expander.js"></script>
+	<style type="text/css">
+		.bg{
+			width: 200px;
+			color: #fff;
+			background-color:  #333;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="expanderCtrl">
+		<expander class="expander" expander-title="title">
+		{{text}}
+		</expander>
+	</div>
+
+</body>
+</html>

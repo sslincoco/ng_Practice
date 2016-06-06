@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="accordionModule">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>expanderModule</title>
+	<script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+	<script type="text/javascript" src="scripts/Accordion.js"></script>
+	<style type="text/css">
+		.expander{
+			width: 200px;
+			border: 1px solid #333;
+		}
+		.bg{
+			color: #fff;
+			background-color:  #333;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="accordionCtrl">
+		<accordion>
+			<expander class="expander" ng-repeat="item in expanders" expander-title="item.title">
+				{{item.text}}
+			</expander>
+		</accordion>
+		
+	</div>
+
+</body>
+</html>
