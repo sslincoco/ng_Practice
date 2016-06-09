@@ -1,0 +1,73 @@
+<div class="row">
+<br>
+	<div class="col-md-6">	
+		<img ng-src="{{mainImgUrl}}" style="border: 1px solid #666;">
+	</div>
+	<div class="col-md-6">
+		<h1>{{phone.name}}</h1>
+		<p>{{phone.description}}</p>
+		<div class="row">
+		<ul class="list-unstyled">
+			<li ng-repeat="img in phone.images">
+				<div ng-if="$index>0" class="col-md-6">
+					<img class="img-thumbnail"  ng-src="{{img}}" ng-click="setImgUrl(img)">
+				</div>
+			</li>
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-3">
+		<dl>
+			<dt>Availability</dt>
+			<dd ng-repeat="availability in phone.availability">{{availability}}</dd>
+		</dl>
+	</div>
+	<div class="col-md-3">
+		<dl>
+			<dt>additionalFeatures</dt>
+			<dd>{{phone.additionalFeatures}}</dd>
+		</dl>
+	</div>
+	<div class="col-md-3">
+		<dl>
+			<dt>Battery</dt>
+			<dd>standbyTime:&nbsp;{{phone.battery.standbyTime | checkmark}}</dd>
+			<dd>type:&nbsp;{{phone.battery.type | checkmark}}</dd>
+		</dl>
+	</div>
+	<div class="col-md-3">
+		<dl>
+			<dt>additionalFeatures</dt>
+			<dd>{{phone.additionalFeatures}}</dd>
+		</dl>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<dl>
+			<dt>Android</dt>
+			<dd>OS:&nbsp;{{phone.android.os | checkmark | uppercase}}</dd>
+			<dd>UI:&nbsp; {{phone.android.ui | checkmark | lowercase}}</dd>
+		</dl>
+	</div>
+	<div class="col-md-3">
+		<dl>
+			<dt>Storage</dt>
+			<dd>Flash:&nbsp;{{phone.storage.flash | checkmark}}</dd>
+			<dd>Ram:&nbsp; {{phone.storage.ram | checkmark}}</dd>
+		</dl>
+	</div>
+	<div class="col-md-3">
+		<dl>
+			<dt>Hardware</dt>
+			<dd>Accelerometer:&nbsp;{{phone.hardware.accelerometer | checkmark}}</dd>
+			<dd>CPU:&nbsp; {{phone.hardware.cpu | checkmark}}</dd>
+			<dd>USB:&nbsp; {{phone.hardware.usb | checkmark}}</dd>
+		</dl>
+	</div>
+</div>
+	
+ 
