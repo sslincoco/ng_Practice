@@ -1,0 +1,72 @@
+<div class="container_index_page">
+    <div ng-include="'templates/homeheader.html'"></div>
+    <div class="page_index" ng-controller="homeCtrl">
+        <div class="index_header">
+            <div class="icon icon{{i+1}}" ng-class="nowIndex===i?'active':''" ng-click="hotTpClick(i)" ng-repeat="i in [0,1,2,3]"></div>
+        </div>
+        <div class="index_content">
+            <a ui-sref="container.detail.dinfo({id:ii.id})" ng-repeat="ii in hotTeapotMap[nowIndex]">
+                <img class="index_content_img" ng-src="{{ii.src}}">
+            </a>
+        </div>
+        <div class="index_preference">
+            <div class="index_preference_header">
+                <span class="ppp"></span>
+                近期特惠
+                <span class="pppr"></span>
+            </div>
+            <div class="index_preference_body">
+                <div class="body_content">
+                    <div class="body_content_item" ng-repeat="p in preferential">
+                        <img class="item_img" ui-sref="container.detail.dinfo({id: p.id})" ng-src="{{p.src}}">
+                        <div class="i_r">{{p.name}}</div>
+                        <div class="i_r">
+                            <span class="i_r_q">
+                                价格：
+                            </span>
+                            {{p.price}}
+                        </div>
+                        <div class="i_r clearfix">
+                            <span class="fl s">
+                                <span class="i_r_q">
+                                    作者:
+                                </span>
+                                {{p.author}}
+                            </span>
+                            <span class="fr s">
+                                <span class="i_r_q">
+                                    容量:
+                                </span>
+                                {{p.volume}}
+                            </span>
+                        </div>
+                        <div class="i_r clearfix">
+                            <span class="fl s">
+                                <span class="i_r_q">
+                                    编号:
+                                </span>
+                                {{p.number}}
+                            </span>
+                            <span class="fr s">{{p.material}}</span>
+                        </div>
+                        <a class="body_content_item_link" ui-sref="container.detail.dinfo({id: p.id})">点击查看详情</a>
+                    </div>
+                </div>
+                <p class="index_preference_footer">
+                    XX网(www.xxx.com)创立于农历庚寅年（虎年）（2010年），专注通过互联网传播实力派，培养潜力股紫砂文化网站，去敏就简，作品说话，主要经营中高端
+                    紫v砂作品，不求大，只求专，精，乐~我们一直在追寻美壶，追慕紫砂的魅力，愿在这充满绚丽色彩的紫砂世界中和您一起分享这些快乐和成果，做最具魅力的紫砂
+                    门户网站。
+                </p>
+                <div class="index_preference_footer2">
+                    <span class="index_preference_footer_i">周到服务</span>
+                    <span class="index_preference_footer_i">专业配送</span>
+                    <span class="index_preference_footer_i">安全支付</span>
+                    <span class="index_preference_footer_i">30天包退包换</span>
+                    <span class="index_preference_footer_i">值得依赖</span>
+                    <span class="index_preference_footer_i">正品保证</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'templates/footer.html'"></div>
+</div>

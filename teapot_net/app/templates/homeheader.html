@@ -1,0 +1,51 @@
+<div class="container_index_header" ng-controller="headerCtrl">
+    <div class="index_header_e"></div>
+    <div class="header_bar">
+        <span class="logo" ui-sref="index"></span>
+        <span class="logo_font">壶悦网，中华文化传承</span>
+        <span class="user">
+            <a class="link" ui-sref="login" ng-if="!user.isLogin">
+                用户登录
+            </a>
+            <a class="link" ui-sref="container.user.info" ng-if="user.isLogin">
+                {{user.info.name}},你好!
+            </a>
+            <a class="link" style="color: #fe0012" ng-click="logout()" ng-if="user.isLogin">
+                退出登录
+            </a>
+        </span>
+        <span class="right">
+            <span class="i" ng-repeat="tc in pageInfo.topclass" ui-sref="container.list(tc)" ui-sref-opts="{location: 'replace'}">
+                {{tc.name}}
+            </span>
+        </span>
+
+        <span class="header_search">
+            <input type="text" class="search_key" maxlength="15" ng-model="searchKey">
+            <button class="srarch_btn" ng-click="onSearch(searchKey)">
+                搜索
+            </button>
+        </span>
+    </div>
+    <div class="header_body" ng-class="$state.includes('index') ? 'active' : ''">
+        <div class="carousel">
+            <carousel datas="carousels" class="carousels_container">
+                <ul class="frame_ul">
+                    <li class="frame" ng-class="{'active':data === active}" ng-repeat="data in datas">
+                        <a ui-sref="container.detail.dinfo({id:data.id})">
+                            <img class="carousel_img" ng-src="{{data.src}}"/>
+                        </a>
+                    </li>
+                </ul>
+                <div class="arrow left" ng-click="m(-1)"></div>
+                <div class="arrow right" ng-click="m(1)"></div>
+            </carousel>
+        </div>
+    </div>
+    <div class="header_nav">
+        <a class="header_nav_item" ui-sref="index">首页</a>
+        <a class="header_nav_item" ui-sref="container.list">壶悦商场</a>
+        <a class="header_nav_item" ui-sref="container.user.fav">我的收藏</a>
+        <a class="header_nav_item" ui-sref="container.about">关于壶悦</a>
+    </div>
+</div>

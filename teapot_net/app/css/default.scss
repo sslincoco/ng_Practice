@@ -1,0 +1,36 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+html{
+    font-size:80px;
+    color:#4c4b49;
+    font-family: tahoma,arial,'Hiragino Sans GB',sans-serif;
+}
+ul,li{
+    list-style-type: none;
+}
+body{
+    padding:0;
+    margin:0;
+    font-size:14px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.clearfix::before,.clearfix::after{
+    display: table;
+    content:" ";
+}
+.clearfix::after{
+    clear:both;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" media="all">
+</head>
+<body ng-controller="MyCtrl">
+<div role="alert" class="alert alert-dismissible alert-{{alert.type}}" ng-repeat="alert in alerts">
+  <button aria-label="Close" data-dismiss="alert" ng-click="alert.close()" class="close" type="button"><span aria-hidden="true">×</span></button>
+  <span ng-bind="alert.msg"></span>
+</div>
+<script type="text/javascript" src="../scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="commalert.js"></script>
+<script type="text/javascript">
+  angular.module('myApp',['globalAlert'])
+  .controller('MyCtrl',['$scope','$rootScope','$interval','commAlertService',function($scope,$rootScope,$interval,commAlertService){
+    commAlertService.alertService().add('success', '操作成功');
+  }]);
+</script>
+</body>
+</html>

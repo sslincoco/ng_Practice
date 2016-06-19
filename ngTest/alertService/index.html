@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title>alertService</title>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<script type="text/javascript" src="../scripts/vendor/angular.js""></script>
+	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+	<script type="text/javascript" src="alert.js""></script>
+</head>
+<body>
+	<div class="alert" ng-controller="alertCtrl">
+		<alert ng-repeat="alert in alerts"  type="alert.type" close="alert.close($index)">{{alert.msg}}</alert>
+		<buttom class="btn btn-primary" ng-click="editProfile()">add alert</buttom>
+	</div>
+
+	<script type="text/javascript">
+		var myApp = angular.module('app', ['ui.bootstrap','alertModule']);
+
+	</script>
+
+</body>
+</html>

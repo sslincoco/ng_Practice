@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="slider">
+<head>
+	<meta charset="utf-8">
+	<title>angularjs-slider</title>
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<script type="text/javascript" src="lib/angular-animate.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+</head>
+<body ng-controller="sliderCtrl">
+    <div lunbo ></div>
+    <script type="text/ng-template" id="lunbo.html">
+        <ul>
+            <li ng-repeat="img in images"
+                class="fade-in style hidden" >
+                <a href="{{img.href}}"><img ng-src="{{img.src}}" alt=""/></a></li>
+        </ul>
+    </script>
+</body>
+</html>
